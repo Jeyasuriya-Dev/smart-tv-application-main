@@ -62,4 +62,4 @@ const fetchAndDownloadMedia = async () => {
 	}
 };
 
-export default
+export default fetchAndDownloadMedia;
