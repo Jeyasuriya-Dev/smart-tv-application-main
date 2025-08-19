@@ -1,0 +1,24 @@
+{
+  "id": "com.smarttv.launchapp",
+  "version": "1.0.0",
+  "vendor": "YourCompany",
+  "type": "web",
+  "main": "index.html",
+  "title": "Smart TV Launch App",
+  "icon": "icon.png",
+  "requiredPermissions": [
+    "accesswebosservice",
+    "public",
+    "accessibility",
+    "fullscreen"
+  ],
+  "permissions": [
+    "systeminfo",
+    "network.query",
+    "network.management"
+  ],
+  "visible": true,
+  "inspectable": true,
+  "fullscreen": true,
+  "noWindow": false
+}
