@@ -236,6 +236,7 @@ const FOLDER_NAME = 'IQMediaFiles';
 const isVideo = (f) => /\.(mp4|webm|ogg)$/i.test(f);
 const isImage = (f) => /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(f);
 const isYouTube = (url) => /youtube\.com|youtu\.be/.test(url);
+const isPdf = (f) => /\.pdf$/i.test(f);
 
 
 const extractYouTubeId = (url) => {
@@ -261,6 +262,10 @@ const StreamingPage = () => {
 	const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
 	const mediaUrls = useMediaStore((state) => state.mediaUrls);
 	const mediaFiles = useMediaStore((state) => state.mediaFiles);
+	const [currentUrl, setCurrentUrl] = useState('');
+	const [imageEnded, setImageEnded] = useState(false);
+	const [count, setCount] = useState(0)
+	const [duration, setDuration] = useState(0)
 
 	useEffect(() => {
 		const fetchAndUpdateMedia = async () => {
@@ -288,6 +293,8 @@ const StreamingPage = () => {
 	};
 
 
+	useEffect(() => {
+	}, [])
 
 	// useEffect(() => {
 	// 	if (!mediaFiles.length) return;
@@ -308,33 +315,61 @@ const StreamingPage = () => {
 	// }, [index, mediaFiles]);
 
 
-	const handleNextMedia = () => setIndex((i) => (i + 1) % mediaFiles.length);
-	
-
+	const handleNextMedia = () => setIndex((i) => (i + 1) % mediaUrls.length);
 
 	useEffect(() => {
-		const length = mediaFiles ? mediaFiles.length : 0;
-  console.log("useEffect running", { index, mediaFilesLength: length });
+		if (!mediaUrls.length) return;
 
-		if (!mediaFiles.length) return;
-		const currentFile = mediaFiles[index];
-		if (!currentFile) return;
+		const currentMedia = mediaUrls[index];
+		// if (!currentMedia) return;
 
-		// Videos handled by onEnded
-		if (isVideo(currentFile.Url) || isYouTube(currentFile.Url)) return console.log("helloo0");
-		;
+		const url = currentMedia.url;
+		setDuration(currentMedia.duration ? Number(currentMedia.duration) * 1000 : 5000);
+		console.log(duration)
 
-		// Handle images explicitly
-		if (isImage(currentFile.Url)) {
-			const duration = currentFile.Duration? Number(currentFile.Duration) * 1000 : 5000; // default 5s
-			console.log(duration)
-			const timer = setTimeout(handleNextMedia, duration);
-			
-			return () => clearTimeout(timer);
+		setCurrentUrl(url);
+		// setImageEnded(false); // reset each time media changes
 
+		if (isVideo(url) || isYouTube(url)) {
+			// Video will call handleNextMedia on its own via onEnded
+			return;
 		}
-	}, [index, mediaFiles]);
-	console.log(index)
+
+
+		// useEffect(() => {
+
+		// 	if (!isImage(url)) return;
+
+		// 	if (isImage(url)) {
+		// 		console.log("Playing image at index:", index);
+
+		// 		const interval = setInterval(() => {
+		// 			console.log('interval' + index)
+		// 			setImageEnded(true)
+		// 		}, duration)
+
+		// 		// return () => clearInterval(interval);
+		// 		// Schedule next image after duration
+		// 		// const timer = setTimeout(() => {
+		// 		// 	setIndex((i) => (i + 1) % mediaUrls.length);
+		// 		// 	console.log('interval' +index)
+		// 		// }, 5000);
+
+		// 		// Clean up old timer when index changes
+		// 		// return () => clearTimeout(timer);
+		// 	}
+
+
+		// }, [])
+	}, [index, mediaUrls]);
+
+	// when image ends → move to next
+	useEffect(() => {
+		if (imageEnded) {
+			handleNextMedia();
+		}
+	}, [imageEnded]);
+
 
 
 
@@ -350,7 +385,7 @@ const StreamingPage = () => {
 	};
 
 
-	const currentUrl = mediaUrls[index];
+
 	console.log(mediaUrls)
 	console.log(currentUrl)
 
@@ -392,12 +427,11 @@ const StreamingPage = () => {
 					style={{ width: '100%', height: '100%' }}
 					onLoad={() => {
 						handleFirstMediaReady();
-						// Hook into YT API once iframe loads
 						const player = new window.YT.Player(`ytplayer-${index}`, {
 							events: {
 								onStateChange: (event) => {
 									if (event.data === window.YT.PlayerState.ENDED) {
-										handleVideoEnd(); // go to next media
+										handleVideoEnd();
 									}
 								},
 							},
@@ -414,18 +448,30 @@ const StreamingPage = () => {
 					onEnded={handleVideoEnd}
 					style={{ width: '100%', height: '100%', objectFit: 'cover' }}
 				/>
+			) : isPdf(currentUrl) ? (
+				// ✅ skip PDFs automatically
+				(() => {
+					handleVideoEnd(); // move immediately to next media
+					return null;
+				})()
 			) : (
 				<img
 					key={currentUrl}
 					src={currentUrl}
 					alt="media"
-					onLoad={handleFirstMediaReady}
+					onLoad={() => {
+						handleFirstMediaReady();
+						// simulate "onEnded" for image
+						setTimeout(() => {
+							handleVideoEnd();
+						}, duration); // use API-provided duration
+					}}
 					style={{ width: '100%', height: '100%', objectFit: 'cover' }}
 				/>
 			)}
-
 		</div>
 	);
+
 };
 
 export default StreamingPage;
