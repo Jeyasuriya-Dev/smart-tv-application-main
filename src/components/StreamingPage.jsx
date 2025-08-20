@@ -336,6 +336,14 @@ const StreamingPage = () => {
 		}
 
 
+
+		// ✅ Skip PDFs safely here
+		if (isPdf(url)) {
+			console.log("Skipping PDF:", url);
+			handleNextMedia();
+			return;
+		}
+
 		// useEffect(() => {
 
 		// 	if (!isImage(url)) return;
@@ -448,12 +456,6 @@ const StreamingPage = () => {
 					onEnded={handleVideoEnd}
 					style={{ width: '100%', height: '100%', objectFit: 'cover' }}
 				/>
-			) : isPdf(currentUrl) ? (
-				// ✅ skip PDFs automatically
-				(() => {
-					handleVideoEnd(); // move immediately to next media
-					return null;
-				})()
 			) : (
 				<img
 					key={currentUrl}
