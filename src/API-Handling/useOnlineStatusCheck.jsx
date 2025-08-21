@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const CHECK_URL = 'https://ds.iqtv.in:8080/iqworld/api/v1/device/checkonline'
 
-const checkDeviceOnline = async () => {
+const checkDeviceOnline = async () => {              
 	try {
 		const res = await axios.get(CHECK_URL, {
 			params: {

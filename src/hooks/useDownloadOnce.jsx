@@ -2,10 +2,12 @@
 import useMediaStore from '../store/useMediaStore';
 import { downloadFile } from '../utils/fileDownloader';
 import axios from 'axios';
+import useAppUrlStore from '../store/useAppUrlStore';
 
 const useDownloadOnce = () => {
 	const setMediaFiles = useMediaStore((state) => state.setMediaFiles);
 	const downloadedFlagKey = 'media_downloaded_once_v1';
+	const appUrl = useAppUrlStore((state) => state.appUrl);
 
 	const downloadOnce = async () => {
 		if (localStorage.getItem(downloadedFlagKey) === 'true') {
@@ -14,7 +16,7 @@ const useDownloadOnce = () => {
 		}
 
 		try {
-			const response = await axios.get('https://ds.iqtv.in:8080/iqworld/api/v1/playlist/mediafilebyclientforsplit', {
+			const response = await axios.get(`${appUrl}api/v1/playlist/mediafilebyclientforsplit`, {
 				params: {
 					clientname: 'ridsysc',
 					state_id: 2,

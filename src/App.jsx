@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import SplashScreen from './components/VideoLoader';
 import RegistrationPage from './components/RegistrationPage';
 import useDeviceDetails from './API-Handling/userDeviceDetails';
-import AndroidIDFetcher from './components/AndroidIDFetcher';
 import RemoteControlHandler from './components/RemoteControlHandler';
 import DeviceStatusPoller from './API-Handling/CheckDeviceOnline';
 import StreamingPage from './components/StreamingPage';
@@ -51,7 +50,6 @@ const App = () => {
 		<>
 			<RemoteControlHandler />
 			<Router>
-				<AndroidIDFetcher />
 				
 				{/* SplashScreen shows immediately, regardless of online status */}
 				{showSplash ? (
@@ -61,6 +59,7 @@ const App = () => {
 						<Route path="/" element={<Home />} />
 						<Route path="/register" element={<RegistrationPage />} />
 						<Route path="/streaming" element={<SplashScreen />} />
+						<Route path='/streamingpage' element={<StreamingPage/>} />
 					</Routes>
 				)}
 			</Router>
