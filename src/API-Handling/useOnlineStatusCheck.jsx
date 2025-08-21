@@ -1,23 +1,37 @@
 // src/API-Handling/useOnlineStatusCheck.jsx
 // Needs AndroidID and Clientname
+// src/API-Handling/useOnlineStatusCheck.jsx
 
 import axios from 'axios';
+import userdeviceUIDStore from '../store/usedeviceIDStore';
+import userDeviceStore from "../store/userDeviceStore"; //  device details store
 
-const CHECK_URL = 'https://ds.iqtv.in:8080/iqworld/api/v1/device/checkonline'
+const CHECK_URL = 'https://ds.iqtv.in:8080/iqworld/api/v1/device/checkonline';
 
-const checkDeviceOnline = async () => {              
+//  Make this a function that gets state when called
+const checkDeviceOnline = async () => {
 	try {
+		// Zustand state must be accessed inside the function
+		const deviceUID = userdeviceUIDStore.getState().deviceUID;  
+		const deviceDetails = userDeviceStore.getState().deviceDetails; 
+		const clientusername = deviceDetails?.clientusername;
+		console.log(clientusername)
+
+		if (!deviceUID || !clientusername) {
+			console.warn("Device UID or clientusername missing.");
+			return false;
+		}
+
 		const res = await axios.get(CHECK_URL, {
 			params: {
-				adrid: '0461dbdd0ce43fd2',
-				clientname: 'vijiqc'
+				adrid: deviceUID,
+				clientname: clientusername
 			}
 		});
 
-		// Return true only if 200 OK
 		return res.status === 200;
 	} catch (err) {
-		console.warn('Device is offline or API unreachable.');
+		console.warn('Device is offline or API unreachable.', err);
 		return false;
 	}
 };

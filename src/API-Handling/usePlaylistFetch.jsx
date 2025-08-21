@@ -74,8 +74,8 @@
 import useMediaStore from '../store/useMediaStore';
 import axios from 'axios';
 import { downloadFile } from '../utils/fileDownloader';
-import useAppUrlStore from "../store/useAppUrlStore"; // ✅ global URL store
-import userDeviceStore from "../store/userDeviceStore"; // ✅ device details store
+import useAppUrlStore from "../store/useAppUrlStore"; //  global URL store
+import userDeviceStore from "../store/userDeviceStore"; //  device details store
 
 const extractMediaUrlsWithDuration = (playlist) => {
   const mediaItems = [];
@@ -93,26 +93,26 @@ const extractMediaUrlsWithDuration = (playlist) => {
 
 const fetchAndDownloadMedia = async () => {
   const { setMediaFiles, setUpdatedTime, updatedTime, setMediaUrls } = useMediaStore.getState();
-  const appUrl = useAppUrlStore.getState().appUrl; // ✅ fetch from store
-  const deviceDetails = userDeviceStore.getState().deviceDetails; // ✅ device info
+  const appUrl = useAppUrlStore.getState().appUrl; //  fetch from store
+  const deviceDetails = userDeviceStore.getState().deviceDetails; //  device info
 
   try {
     const response = await axios.get(
       `${appUrl}api/v1/playlist/mediafilebyclientforsplit`,
       {
         params: {
-        //   clientname: 'vijiqc', // ridsysc dfgdf
-        //   state_id: 2,          // 2 2
-        //   city_id: 65,          // 65 300
-        //   androidid: '0461dbdd0ce43fd2', // 0461dbdd0ce43fd2 ABCDEFGHIJ
-        //   deviceid: 'IQW0000021',        // IQW0000014 IQW0000061
-        //   vertical: true         // true true
-			 clientname: deviceDetails.clientusername,
-             state_id: deviceDetails.state_id,
-             city_id: deviceDetails.city_id,
-             androidid: deviceDetails.username,   // username is usually device’s androidid
-             deviceid: deviceDetails.password,    // password holds deviceId (IQW0000014 here)
-             vertical: deviceDetails.orientation === "9:16" ? true : false
+          //   clientname: 'vijiqc', // ridsysc dfgdf
+          //   state_id: 2,          // 2 2
+          //   city_id: 65,          // 65 300
+          //   androidid: '0461dbdd0ce43fd2', // 0461dbdd0ce43fd2 ABCDEFGHIJ
+          //   deviceid: 'IQW0000021',        // IQW0000014 IQW0000061
+          //   vertical: true         // true true
+          clientname: deviceDetails.clientusername,
+          state_id: deviceDetails.state_id,
+          city_id: deviceDetails.city_id,
+          androidid: deviceDetails.username,   // username is usually device’s androidid
+          deviceid: deviceDetails.password,    // password holds deviceId (IQW0000014 here)
+          vertical: deviceDetails.orientation === "9:16" ? true : false
         }
       }
     );

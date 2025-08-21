@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import userDeviceStore from '../store/userDeviceStore';
 import useAppUrlStore from '../store/useAppUrlStore';
+import userdeviceUIDStore from '../store/usedeviceIDStore';
 
 
 const useDeviceDetails = (shouldStart) => {
@@ -20,6 +21,8 @@ const useDeviceDetails = (shouldStart) => {
 
 	const showdeviceDetails = userDeviceStore((state) => state.deviceDetails); //Show Function User Device Details From Store 
 
+	const deviceUID = userdeviceUIDStore((state) => state.deviceUID);
+
 
 	//Console.log User Device details  
 	useEffect(() => {
@@ -29,11 +32,12 @@ const useDeviceDetails = (shouldStart) => {
 	}, [showdeviceDetails]);
 
 
+	console.log(deviceUID)
 	useEffect(() => {
 
 		const fetchData = async () => {
 			try {
-				const res = await axios.get(`${appUrl}api/v1/none-auth/device/isexist?android_id=${Device_id}`);
+				const res = await axios.get(`${appUrl}api/v1/none-auth/device/isexist?android_id=${deviceUID}`);
 				var data = res.data;
 
 

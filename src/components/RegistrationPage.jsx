@@ -185,126 +185,6 @@
 
 
 
-// Generate Device Unique ID of Every Device Code Here
-
-import React, { useEffect, useState } from 'react';
-import '../app.css';
-import Qrcode from './Qrcode';
-import userAndroidIDStore from '../store/userAndroididStore';
-import userDeviceStore from '../store/userDeviceStore';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-
-//  Utility to get or generate DUID
-function getDeviceUID() {
-  return new Promise((resolve) => {
-    // On real webOS device
-    if (window.webOS && window.webOS.deviceInfo) {
-      window.webOS.deviceInfo((info) => {
-        if (info && info.duid) {
-          resolve(info.duid);
-        } else {
-          // fallback: use serial number if available
-          if (info && info.serialNumber) {
-            resolve(info.serialNumber);
-          } else {
-            // ultimate fallback
-            let uid = localStorage.getItem("fallback_duid");
-            if (!uid) {
-              uid = crypto.randomUUID();
-              localStorage.setItem("fallback_duid", uid);
-            }
-            resolve(uid);
-          }
-        }
-      });
-    } else {
-      // Not on webOS (Browser testing)
-      let uid = localStorage.getItem("fallback_duid");
-      if (!uid) {
-        uid = crypto.randomUUID();
-        localStorage.setItem("fallback_duid", uid);
-      }
-      resolve(uid);
-    }
-  });
-}
-
-export default function RegistrationPage() {
-  const [uniqueNumber, setUniqueNumber] = useState('');
-  const [qrValue, setQrvalue] = useState(true);
-  const [value, setValue] = useState('');
-  const [deviceId, setDeviceId] = useState('');
-
-  const { setAndroidId } = userAndroidIDStore();
-  const { setIsRegistered } = userDeviceStore.getState();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // extract androidID from URL if present
-    const url = window.location.href;
-    const match = url.match(/registrationform\/([^/]+)/);
-    if (match && match[1]) {
-      const androidIdFromURL = match[1];
-      setAndroidId(androidIdFromURL);
-    }
-  }, []);
-
-  useEffect(() => {
-    //  Initialize Device UID
-    getDeviceUID().then((uid) => {
-      setDeviceId(uid);
-      // Also update QR link with this device ID
-      setValue(`https://ds.iqtv.in/#/iqworld/digitalsignage/device/registrationform/${uid}`);
-    });
-  }, []);
-
-  const handleChange = (e) => {
-    setUniqueNumber(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const deviceDetails = userDeviceStore.getState().deviceDetails;
-
-    if (deviceDetails && uniqueNumber === deviceDetails.username) {
-      toast.success("Registration successful");
-      setIsRegistered(true);
-      navigate('/');
-    } else {
-      toast.error("Invalid username");
-    }
-  };
-
-  return (
-    <div>
-      <div className="container">
-        <div className='contents-container'>
-          <img src="./applogo.jpeg" alt="IQ World Logo" className="logo" />
-          <p className="tagline">INDIA KA IQ</p>
-          <div className='head'>
-            <h2>New Device Registration</h2>
-          </div>
-          {qrValue ? <Qrcode value={value} /> : null}
-
-          <div className="form-group">
-            <label htmlFor="unique-number">Unique Number</label>
-            <input type="text" id="unique-number" onChange={handleChange} />
-          </div>
-          <div className='button-container'>
-            <button className="submit-btn" id='submit-button' onClick={handleSubmit}>Submit</button>
-            {/* <p>Device UID: {deviceId}</p> */}
-          </div>
-        </div>
-        <div className='version-container'>
-          <p className="version">{deviceId} <br /> V-1.0</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
 // import React, { useEffect, useState } from 'react';
 // import '../app.css';
 // import Qrcode from './Qrcode';
@@ -798,3 +678,201 @@ export default function RegistrationPage() {
 //     </div>
 //   );
 // }
+
+
+// src/pages/RegistrationPage.jsx
+import React, { useEffect, useState } from 'react';
+import '../app.css';
+import Qrcode from './Qrcode';
+import userAndroidIDStore from '../store/usedeviceIDStore';
+import userDeviceStore from '../store/userDeviceStore';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import userdeviceUIDStore from '../store/usedeviceIDStore';
+import initDeviceUID from '../utils/initDeviceUID';
+import useAppUrlStore from '../store/useAppUrlStore';
+
+export default function RegistrationPage() {
+	const [uniqueNumber, setUniqueNumber] = useState('');
+	const [qrValue, setQrvalue] = useState(true);
+	const [value, setValue] = useState('');
+
+	const { setAndroidId } = userAndroidIDStore();
+	const { setIsRegistered, setDeviceDetails } = userDeviceStore.getState();
+	const deviceUID = userdeviceUIDStore((state) => state.deviceUID);
+	const navigate = useNavigate();
+
+
+	const appUrl = useAppUrlStore((state) => state.appUrl);
+
+	useEffect(() => {
+		const fetchDeviceUID = async () => {
+			const uid = await initDeviceUID(); // ensures store is set
+			console.log("Device UID:", uid);
+		};
+		fetchDeviceUID();
+	}, []);
+
+	useEffect(() => {
+		// extract androidID from URL if present
+		const url = window.location.href;
+		const match = url.match(/registrationform\/([^/]+)/);
+		if (match && match[1]) {
+			const androidIdFromURL = match[1];
+			setAndroidId(androidIdFromURL);
+		}
+	}, []);
+
+	useEffect(() => {
+		if (deviceUID) {
+			setValue(`https://ds.iqtv.in/#/iqworld/digitalsignage/device/registrationform/${deviceUID}`);
+		}
+	}, [deviceUID]);
+
+	const handleChange = (e) => {
+		setUniqueNumber(e.target.value);
+	};
+
+	// const handleSubmit = async (e) => {
+	// 	e.preventDefault();
+
+	// 	if (!uniqueNumber || !deviceUID) {
+	// 		toast.error("Missing Unique Number or Device ID");
+	// 		return;
+	// 	}
+
+	// 	try {
+	// 		// 1. Call registration API
+	// 		const regRes = await fetch(
+	// 			`${appUrl}api/v1/none-auth/updatedeviceandroid?uniq=${uniqueNumber}&android_id=${deviceUID}`,
+	// 			{ method: "GET" }
+	// 		);
+	// 		const regData = await regRes.json();
+
+	// 		if (regData?.status === "success") {
+	// 			// 2. Call device exist check API
+	// 			const existRes = await fetch(
+	// 				`${appUrl}api/v1/none-auth/device/isexist?android_id=${deviceUID}`
+	// 			);
+	// 			const existData = await existRes.json();
+	// 			console.log('=====Device API Response From RegistrationPage=====')
+	// 			console.log(JSON.stringify(existData, null, 2));
+
+	// 			if (existData?.device_status && existData?.client_status) {
+	// 				toast.success("Device registered successfully ");
+	// 				setDeviceDetails(existData); // save device details to store
+	// 				setIsRegistered(true);
+	// 			} else {
+	// 				toast.error("Device registration failed: " + (existData?.message || "Unknown error"));
+	// 			}
+	// 		} else {
+	// 			toast.error("Registration failed: " + (regData?.message || "Invalid Unique Number"));
+	// 		}
+	// 	} catch (err) {
+	// 		console.error("Error during registration:", err);
+	// 		toast.error("Something went wrong during registration");
+	// 	}
+	// };
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		if (!uniqueNumber || !deviceUID) {
+			toast.error("Missing Unique Number or Device ID");
+			return;
+		}
+
+		try {
+			// 1️⃣ Call registration API
+			const regRes = await fetch(
+				`${appUrl}api/v1/none-auth/updatedeviceandroid?uniq=${uniqueNumber}&android_id=${deviceUID}`,
+				{ method: "GET" }
+			);
+			const regData = await regRes.json();
+
+			if (regData?.status === "success") {
+				// 2️⃣ Call device exist check API
+				const existRes = await fetch(
+					`${appUrl}api/v1/none-auth/device/isexist?android_id=${deviceUID}`
+				);
+				const existData = await existRes.json();
+				console.log("=====Device API Response From RegistrationPage=====");
+				console.log(JSON.stringify(existData, null, 2));
+				const status = existData.status;
+
+				if (existData?.device_status && existData?.client_status) {
+					toast.success("Device registered successfully ");
+					setDeviceDetails(existData); // save device details to store
+
+					// 3️⃣ Extract username & password
+					const { username, password } = existData;
+					if (!username || !password) {
+						toast.error("Missing username/password in device response");
+						return;
+					}
+
+					// 4️⃣ Call SignIn API
+					const signinRes = await fetch(`${appUrl}api/auth/signin`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({ username, password }),
+					});
+					const signinData = await signinRes.json();
+					console.log("=== Sign In API Response ===");
+					console.log(JSON.stringify(signinData,null,2));
+
+					// console.log(status);
+					
+					if (status === "success") {
+						toast.success("Signed in successfully");
+						setIsRegistered(true); // this will trigger redirect to streaming
+					} else {
+						toast.error("Signin failed: " + (signinData?.message || "Invalid credentials"));
+					}
+				} else {
+					toast.error(
+						"Device registration failed: " + (existData?.message || "Unknown error")
+					);
+				}
+			} else {
+				toast.error(
+					"Registration failed: " + (regData?.message || "Invalid Unique Number")
+				);
+			}
+		} catch (err) {
+			console.error("Error during registration:", err);
+			toast.error("Something went wrong during registration");
+		}
+	};
+
+
+	return (
+		<div>
+			<div className="container">
+				<div className='contents-container'>
+					<img src="./applogo.jpeg" alt="IQ World Logo" className="logo" />
+					<p className="tagline">INDIA KA IQ</p>
+					<div className='head'>
+						<h2>New Device Registration</h2>
+					</div>
+					{qrValue && <Qrcode value={value} />}
+
+					<div className="form-group">
+						<label htmlFor="unique-number">Unique Number</label>
+						<input type="text" id="unique-number" onChange={handleChange} />
+					</div>
+					<div className='button-container'>
+						<button className="submit-btn" id='submit-button' onClick={handleSubmit}>
+							Submit
+						</button>
+					</div>
+				</div>
+				<div className='version-container'>
+					<p className="version">{deviceUID} <br /> V-1.0</p>
+				</div>
+			</div>
+		</div>
+	);
+}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import useAppUrlStore from '../store/useAppUrlStore';
 
 const SignInAPI = () => {
 
   const [username,setUserName] = useState('');
   const [password,setPassword] = useState('');
+	const appUrl = useAppUrlStore((state) => state.appUrl);
   
 
   const BASE_URL = 'https://ds.iqtv.in:8080/iqworld';
@@ -13,14 +15,14 @@ const SignInAPI = () => {
     const login = async () => {
       try {
         console.log
-        const response = await fetch(`${BASE_URL}/api/auth/signin`, {
+        const response = await fetch(`${appUrl}api/auth/signin`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username: 'vijiqc',   // Replace with actual username for testing : admin  
-            password: 'Pass@123'    // Replace with actual password : admin@123
+            username: 'IQW0000023',   // Replace with actual username for testing : admin  
+            password: 'IQW0000023'    // Replace with actual password : admin@123
           }),
         });
 

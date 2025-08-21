@@ -392,11 +392,6 @@ const StreamingPage = () => {
 		}
 	};
 
-
-
-	console.log(mediaUrls)
-	console.log(currentUrl)
-
 	// If offline, show OfflineScreen
 	if (!isOnline) {
 		return <OfflineScreen />;

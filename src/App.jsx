@@ -9,6 +9,7 @@ import RemoteControlHandler from './components/RemoteControlHandler';
 import DeviceStatusPoller from './API-Handling/CheckDeviceOnline';
 import StreamingPage from './components/StreamingPage';
 import checkDeviceOnline from './API-Handling/useOnlineStatusCheck';
+import initDeviceUID from './utils/initDeviceUID';
 
 import useMediaStore from './store/useMediaStore';
 
@@ -41,6 +42,13 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
+		const fetchUID = async () => {
+			const uid = await initDeviceUID();
+			console.log('Device UID initialized:', uid);
+		};
+		fetchUID();
+	}, []);
+	useEffect(() => {
 		if (mediaFiles.length > 0) {
 			downloadMediaFilesOnce(mediaFiles);
 		}
@@ -50,7 +58,8 @@ const App = () => {
 		<>
 			<RemoteControlHandler />
 			<Router>
-				
+				<DeviceStatusPoller />
+
 				{/* SplashScreen shows immediately, regardless of online status */}
 				{showSplash ? (
 					<SplashScreen onComplete={() => setShowSplash(false)} />
@@ -59,7 +68,7 @@ const App = () => {
 						<Route path="/" element={<Home />} />
 						<Route path="/register" element={<RegistrationPage />} />
 						<Route path="/streaming" element={<SplashScreen />} />
-						<Route path='/streamingpage' element={<StreamingPage/>} />
+						<Route path='/streamingpage' element={<StreamingPage />} />
 					</Routes>
 				)}
 			</Router>

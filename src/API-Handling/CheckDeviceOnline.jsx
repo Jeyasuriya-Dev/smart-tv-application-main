@@ -129,18 +129,27 @@ import axios from 'axios';
 import OfflineScreen from '../components/OfflineScreen';   // <-- import your offline component
 import SucimgTower from '../assets/sucTower-removebg-preview.png';
 import FailimgTower from '../assets/failTower-removebg-preview.png';
+import useAppUrlStore from '../store/useAppUrlStore';
+import userdeviceUIDStore from '../store/usedeviceIDStore';
+import userDeviceStore from "../store/userDeviceStore"; //  device details store
 
 const DeviceStatusPoller = () => {
-	const [isOnline, setIsOnline] = useState(true);
+	const [isOnline, setIsOnline] = useState(false);
 	const [imagesrc, setImagesrc] = useState('');
+	const appUrl = useAppUrlStore((state) => state.appUrl);
 	const isOnlineURL = import.meta.env.VITE_DEVICEONLINE_CHECK_URL;
 	// const node_env = import.meta.env.VITE_NODE_ENV ;
+
+	const deviceDetails = userDeviceStore.getState().deviceDetails;
+	const clientusername = deviceDetails?.clientusername;
+
+	const deviceUID = userdeviceUIDStore((state) => state.deviceUID);
 
 	const checkAPI = async () => {
 		try {
 			const response = await axios.get(isOnlineURL, {
 				params: {
-					adrid: '0461dbdd0ce43fd2',
+					adrid: deviceUID,
 					clientname: 'vijiqc',
 				},
 				timeout: 3000,

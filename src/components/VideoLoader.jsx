@@ -313,7 +313,7 @@ const SplashScreen = () => {
 	};
 
 	useServerPoll(videoEnded && serverStatus !== 'error', handleServerResponse, appUrl);
-	SignInAPI();
+	// SignInAPI();
 
 	// Determine video source based on device orientation
 	useEffect(() => {
