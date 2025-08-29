@@ -1,0 +1,677 @@
+for windows path reco:
+	set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+
+
+{
+    "updated_time": "2025-08-29T20:00:54",
+    "End_time": "2025-08-29T20:25:41",
+    "isfreeze": false,
+    "start_time": "20:01:03",
+    "layout_list": [
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29300335.mp4",
+                            "Duration": "30",
+                            "Mediafile_id": 29300,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29300335.mp4"
+                        }
+                    ],
+                    "ismute": false,
+                    "x": 2,
+                    "width": 0,
+                    "zone_duration": "30",
+                    "y": 0,
+                    "id": 1915,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29295704.png",
+                            "Duration": "10",
+                            "Mediafile_id": 29295,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29295704.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 0,
+                    "id": 1916,
+                    "rows": 1,
+                    "cols": 2,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29296525.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 29296,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29296525.jpg"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 1,
+                    "id": 1917,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29297179.png",
+                            "Duration": "10",
+                            "Mediafile_id": 29297,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29297179.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 1,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 1,
+                    "id": 1918,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29298485.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 29298,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29298485.jpg"
+                        },
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29302214.png",
+                            "Duration": "10",
+                            "Mediafile_id": 29302,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29302214.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 2,
+                    "width": 0,
+                    "zone_duration": "20",
+                    "y": 1,
+                    "id": 1919,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29299257.png",
+                            "Duration": "10",
+                            "Mediafile_id": 29299,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29299257.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 2,
+                    "id": 1920,
+                    "rows": 1,
+                    "cols": 2,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": 30,
+            "layoutid": 626,
+            "zonecount": 6
+        },
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29337176",
+                            "Duration": "255",
+                            "Mediafile_id": 29337,
+                            "Page_count": 1,
+                            "Url": "https://youtu.be/v4K1ywf19xw?si=b-PEC0O_6NqWScYE"
+                        },
+                        {
+                            "Order_id": 1,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_29272243.pdf",
+                            "Duration": "10",
+                            "Mediafile_id": 29272,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/41/IQ_WORLD_29272243.pdf"
+                        }
+                    ],
+                    "ismute": "true",
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "265",
+                    "y": 0,
+                    "id": 0,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": "265",
+            "layoutid": 0,
+            "zonecount": 1
+        }
+    ],
+    "playlist_name": "IQ TEST",
+    "content_type": "STATE",
+    "size": 15783382,
+    "media_type": "both",
+    "playlist_id": 41,
+    "scrollerList": [
+        {
+            "id": 315,
+            "name": "Testing764",
+            "clientname": "vijiqc",
+            "message": "It's all testing purpose to giving scrolling messages....",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/Samp1.jpg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-05-18T11:11:25",
+            "updateddate": "2024-06-14T17:07:38",
+            "fncolor": "#000000",
+            "bgcolor": "#023ded",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/ParmaInitialenMK/ParmaInitialenMK.ttf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "ParmaInitialenMK",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 324,
+            "name": "TRTTT",
+            "clientname": "vijiqc",
+            "message": "TESTING IQ WORLD...35345345",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/images_(7).jpeg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-05-20T12:47:44",
+            "updateddate": "2024-06-15T13:15:17",
+            "fncolor": "#1c22ce",
+            "bgcolor": "#b90909",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 325,
+            "name": "RET",
+            "clientname": "vijiqc",
+            "message": "TESTING TESTING ",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/hd-image-ai-generative-free-photo.jpeg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-05-21T10:37:08",
+            "updateddate": "2024-06-15T13:08:56",
+            "fncolor": "#ff14f7",
+            "bgcolor": "#09ec2f",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 327,
+            "name": "welcome",
+            "clientname": "vijiqc",
+            "message": "welcome rurutek client kirubha and team",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/pexels-sevenstormphotography-381739.jpg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-05-21T16:17:49",
+            "updateddate": "2024-06-14T17:08:16",
+            "fncolor": "#7e3030",
+            "bgcolor": "#e1d0d0",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/norwester/norwester.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "15",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "norwester",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 343,
+            "name": "treyt",
+            "clientname": "vijiqc",
+            "message": "welcome to customer portal!!! have a great day!!!!!!!!!!!!!!!!!!!!!!!",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/ott.jpg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-05-28T17:45:38",
+            "updateddate": "2024-06-14T17:08:26",
+            "fncolor": "#1d1b98",
+            "bgcolor": "#6bcb0b",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/pacifico/Pacifico.ttf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "15",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "pacifico",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 344,
+            "name": "NEW",
+            "clientname": "vijiqc",
+            "message": "GOOD EVENING TO ALLLL!!!!!!!!!!!!!!!!! NJOY UR LIFE!1111",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/images_(3).jpeg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-05-28T17:58:16",
+            "updateddate": "2024-06-15T13:36:39",
+            "fncolor": "#e21a03",
+            "bgcolor": "#f6fa00",
+            "fnsize": "43",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 355,
+            "name": "tttttt",
+            "clientname": "vijiqc",
+            "message": "Enter your text here",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/download_(1).jpeg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-06-03T18:45:54",
+            "updateddate": "2024-06-14T17:08:40",
+            "fncolor": "#05ff65",
+            "bgcolor": "#0d09f1",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/SeasideResortNF/SEASRN__.ttf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "SeasideResortNF",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 373,
+            "name": "QQQ",
+            "clientname": "vijiqc",
+            "message": "Welcome to Ridsys IQ WORLD!!!!!!!!!!!!",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/kbpexels-minan1398-906150_(1).jpg",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-06-14T17:41:11",
+            "updateddate": "2024-06-14T17:47:32",
+            "fncolor": "#1150b6",
+            "bgcolor": "#f24a4a",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/kaushan-script/KaushanScript-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "kaushan-script",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 380,
+            "name": "YYYY",
+            "clientname": "vijiqc",
+            "message": "GOOD AFTERNOON TO ALL......!!!!!!!!!!",
+            "logo": null,
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-06-21T15:30:39",
+            "updateddate": "2024-06-21T15:30:39",
+            "fncolor": "#a12626",
+            "bgcolor": "#0fbfc2",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 615,
+            "name": "test",
+            "clientname": "vijiqc",
+            "message": "Enter your text here",
+            "logo": "https://ds.iqtv.in/iqsignage/scroller/2/text_image.png",
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2025-01-18T13:12:54",
+            "updateddate": "2025-01-18T13:12:54",
+            "fncolor": "#000000",
+            "bgcolor": "#00000000",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 649,
+            "name": "gfddgdgd",
+            "clientname": "vijiqc",
+            "message": "Enter your text here",
+            "logo": null,
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2025-02-22T15:48:12",
+            "updateddate": "2025-02-22T15:48:12",
+            "fncolor": "#d52020",
+            "bgcolor": "#00000000",
+            "fnsize": "35",
+            "fontname": "https://ds.iqtv.in/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-08-29T20:00:54",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        }
+    ],
+    "position": "ORDER",
+    "mediafile_count": 9
+}
+
+
+
+{
+    "start_time": "null",
+    "updated_time": "2025-08-26T10:52:13",
+    "layout_list": [
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32007511.mp4",
+                            "Duration": "22",
+                            "Mediafile_id": 32007,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32007511.mp4"
+                        },
+                        {
+                            "Order_id": 1,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32000391.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 32000,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32000391.jpg"
+                        },
+                        {
+                            "Order_id": 2,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32004618.mp4",
+                            "Duration": "15",
+                            "Mediafile_id": 32004,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32004618.mp4"
+                        },
+                        {
+                            "Order_id": 3,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32003719.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 32003,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32003719.jpg"
+                        },
+                        {
+                            "Order_id": 4,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32002787.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 32002,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32002787.jpg"
+                        },
+                        {
+                            "Order_id": 5,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32005723.mp4",
+                            "Duration": "11",
+                            "Mediafile_id": 32005,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32005723.mp4"
+                        },
+                        {
+                            "Order_id": 6,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32006924.mp4",
+                            "Duration": "14",
+                            "Mediafile_id": 32006,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32006924.mp4"
+                        },
+                        {
+                            "Order_id": 7,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_32001908.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 32001,
+                            "Page_count": 1,
+                            "Url": "https://ds.iqtv.in/iqsignage/2/2947/IQ_WORLD_32001908.jpg"
+                        }
+                    ],
+                    "ismute": "true",
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "102",
+                    "y": 0,
+                    "id": 0,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": "102",
+            "layoutid": 0,
+            "zonecount": 1
+        }
+    ],
+    "playlist_name": "tEST",
+    "content_type": "LOCATION",
+    "size": 112497432,
+    "media_type": "defaultMedia",
+    "End_time": "null",
+    "playlist_id": 2947,
+    "scrollerList": [],
+    "mediafile_count": 8,
+    "isfreeze": false
+}

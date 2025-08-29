@@ -1269,6 +1269,7 @@ import DeviceStatusPoller from "../API-Handling/CheckDeviceOnline";
 import { getMediaPath } from "../utils/mediaPathResolver";
 import { Document, Page, pdfjs } from "react-pdf";
 import pdfWorker from "pdfjs-dist/build/pdf.worker.min?url";
+import SplitScreen from "./SplitScreenPlayer";
 
 
 //  TV-safe: avoid worker URL / CDN issues (white screen on webOS/Tizen).
@@ -1406,86 +1407,186 @@ const StreamingPage = () => {
 		return <OfflineScreen />;
 	}
 
+	// return (
+	// 	<>
+	// 		<div
+	// 			style={{
+	// 				width: "100vw",
+	// 				height: "100vh",
+	// 				overflow: "hidden",
+	// 				background: "#000",
+	// 				position: "relative",
+	// 			}}
+	// 		>
+	// 			{loading && !hasLoadedOnce && (
+	// 				<div
+	// 					style={{
+	// 						position: "absolute",
+	// 						top: 0,
+	// 						left: 0,
+	// 						width: "100%",
+	// 						height: "100%",
+	// 						background: "rgba(0,0,0,0.6)",
+	// 						display: "flex",
+	// 						alignItems: "center",
+	// 						justifyContent: "center",
+	// 						zIndex: 99999,
+	// 					}}
+	// 				>
+	// 					<h1 style={{ color: "white", position: "absolute", zIndex: 99999 }}>LOADING...</h1>
+	// 					<Spinner animation="border" variant="danger" />
+	// 				</div>
+	// 			)}
+
+	// 			{isYouTube(currentUrl) ? (
+	// 				<iframe
+	// 					key={currentUrl}
+	// 					id={`ytplayer-${index}`}
+	// 					src={`https://www.youtube.com/embed/${extractYouTubeId(currentUrl)}?autoplay=1&controls=0&enablejsapi=1`}
+	// 					frameBorder="0"
+	// 					allow="autoplay; fullscreen"
+	// 					allowFullScreen
+	// 					onLoad={handleFirstMediaReady}
+	// 					style={{ width: "100%", height: "100%" }}
+	// 				/>
+	// 			) : isVideo(currentUrl) ? (
+	// 				<video
+	// 					key={currentUrl}
+	// 					src={currentUrl}
+	// 					autoPlay
+	// 					controls={false}
+	// 					onCanPlay={handleFirstMediaReady}
+	// 					onEnded={handleNextMedia}
+	// 					style={{ width: "100%", height: "100%", objectFit: "fill" }}
+	// 				/>
+	// 			) : isPdf(currentUrl) ? (
+	// 				<PdfViewer
+	// 					key={currentUrl}
+	// 					src={currentUrl}
+	// 					duration={duration}
+	// 					onReady={handleFirstMediaReady}
+	// 					onTimeout={handleNextMedia}
+	// 					transition={mediaUrls[index]?.transition || "fade"}
+	// 				/>
+
+	// 			) : (
+	// 				<img
+	// 					key={currentUrl}
+	// 					src={currentUrl}
+	// 					alt="media"
+	// 					onLoad={() => {
+	// 						handleFirstMediaReady();
+	// 						setTimeout(() => {
+	// 							handleNextMedia();
+	// 						}, duration);
+	// 					}}
+	// 					style={{ width: "100%", height: "100%", objectFit: "fill" }}
+	// 				/>
+	// 			)}
+	// 		</div>
+	// 		<DeviceStatusPoller />
+	// 	</>
+	// );
+
+	// splitScreen 
+
 	return (
 		<>
-			<div
-				style={{
-					width: "100vw",
-					height: "100vh",
-					overflow: "hidden",
-					background: "#000",
-					position: "relative",
-				}}
-			>
-				{loading && !hasLoadedOnce && (
+			{loading && !hasLoadedOnce && (
+				<div
+					style={{
+						position: "absolute",
+						top: 0,
+						left: 0,
+						width: "100%",
+						height: "100%",
+						background: "rgba(0,0,0,0.6)",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						zIndex: 99999,
+					}}
+				>
+					<h1 style={{ color: "white", position: "absolute", zIndex: 99999 }}>
+						LOADING...
+					</h1>
+					<Spinner animation="border" variant="danger" />
+				</div>
+			)}
+
+			<SplitScreen
+				left={
+					isYouTube(currentUrl) ? (
+						<iframe
+							key={currentUrl}
+							id={`ytplayer-${index}`}
+							src={`https://www.youtube.com/embed/${extractYouTubeId(
+								currentUrl
+							)}?autoplay=1&controls=0&enablejsapi=1`}
+							frameBorder="0"
+							allow="autoplay; fullscreen"
+							allowFullScreen
+							onLoad={handleFirstMediaReady}
+							style={{ width: "100%", height: "100%" }}
+						/>
+					) : isVideo(currentUrl) ? (
+						<video
+							key={currentUrl}
+							src={currentUrl}
+							autoPlay
+							controls={false}
+							onCanPlay={handleFirstMediaReady}
+							onEnded={handleNextMedia}
+							style={{ width: "100%", height: "100%", objectFit: "fill" }}
+						/>
+					) : isPdf(currentUrl) ? (
+						<PdfViewer
+							key={currentUrl}
+							src={currentUrl}
+							duration={duration}
+							onReady={handleFirstMediaReady}
+							onTimeout={handleNextMedia}
+							transition={mediaUrls[index]?.transition || "fade"}
+						/>
+					) : (
+						<img
+							key={currentUrl}
+							src={currentUrl}
+							alt="media"
+							onLoad={() => {
+								handleFirstMediaReady();
+								setTimeout(() => {
+									handleNextMedia();
+								}, duration);
+							}}
+							style={{ width: "100%", height: "100%", objectFit: "fill" }}
+						/>
+					)
+				}
+				right={
 					<div
 						style={{
-							position: "absolute",
-							top: 0,
-							left: 0,
 							width: "100%",
 							height: "100%",
-							background: "rgba(0,0,0,0.6)",
+							background: "#111",
+							color: "white",
 							display: "flex",
 							alignItems: "center",
 							justifyContent: "center",
-							zIndex: 99999,
+							fontSize: "2rem",
 						}}
 					>
-						<h1 style={{ color: "white", position: "absolute", zIndex: 99999 }}>LOADING...</h1>
-						<Spinner animation="border" variant="danger" />
+						Sidebar / Info / Another Media
 					</div>
-				)}
+				}
+			/>
 
-				{isYouTube(currentUrl) ? (
-					<iframe
-						key={currentUrl}
-						id={`ytplayer-${index}`}
-						src={`https://www.youtube.com/embed/${extractYouTubeId(currentUrl)}?autoplay=1&controls=0&enablejsapi=1`}
-						frameBorder="0"
-						allow="autoplay; fullscreen"
-						allowFullScreen
-						onLoad={handleFirstMediaReady}
-						style={{ width: "100%", height: "100%" }}
-					/>
-				) : isVideo(currentUrl) ? (
-					<video
-						key={currentUrl}
-						src={currentUrl}
-						autoPlay
-						controls={false}
-						onCanPlay={handleFirstMediaReady}
-						onEnded={handleNextMedia}
-						style={{ width: "100%", height: "100%", objectFit: "fill" }}
-					/>
-				) : isPdf(currentUrl) ? (
-					<PdfViewer
-						key={currentUrl}
-						src={currentUrl}
-						duration={duration}
-						onReady={handleFirstMediaReady}
-						onTimeout={handleNextMedia}
-						transition={mediaUrls[index]?.transition || "fade"}
-					/>
-
-				) : (
-					<img
-						key={currentUrl}
-						src={currentUrl}
-						alt="media"
-						onLoad={() => {
-							handleFirstMediaReady();
-							setTimeout(() => {
-								handleNextMedia();
-							}, duration);
-						}}
-						style={{ width: "100%", height: "100%", objectFit: "fill" }}
-					/>
-				)}
-			</div>
 			<DeviceStatusPoller />
 		</>
 	);
+
+
+
 };
 
 function PdfViewer({ src, duration, onReady, onTimeout }) {
