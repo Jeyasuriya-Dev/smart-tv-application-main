@@ -1,0 +1,473 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #224b72, #0c3552);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    height: 100vh;
+}
+
+.contents-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 10%;
+    width: max-content;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+h2 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.qr-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+    color: black;
+}
+
+.qr-code {
+    width: 100%;
+    max-width: 250px;
+}
+
+.form-group {
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 550;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 7px;
+    border-radius: 8px;
+    width: fit-content;
+    border: 2px solid rgb(2, 65, 138);
+    background-color: #0c3953;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.generator-ip {
+    width: 100%;
+    padding: 7px;
+    border-radius: 8px;
+    width: fit-content;
+    border: 2px solid rgb(2, 65, 138);
+    background-color: #0c3953;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input:focus {
+    border: 2px solid rgb(2, 65, 138);
+    outline: none;
+    color: #0689b4;
+}
+
+.submit-btn {
+    background: #00bfffe7;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.4);
+    transition: background 0.3s;
+}
+
+.button-container {
+    display: block;
+}
+
+.submit-btn:hover {
+    background: #0099cc;
+}
+
+.version-container {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: block;
+    width: 100%;
+}
+
+.version {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    font-size: 10px;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+
+/* PDF styles  */
+.pdf-page {
+    /* transition: all 0.6s ease; */
+    transform-origin: center;
+}
+
+/* Make PDF page canvas transparent */
+.react-pdf__Page {
+    background: transparent !important;
+    /* remove white wrapper */
+    box-shadow: none !important;
+    /* remove default shadow */
+}
+
+.react-pdf__Page__canvas {
+    background: transparent !important;
+    /* ensure canvas is clean */
+}
+
+/* Optional: add futuristic loading shimmer */
+.pdf-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-loader .dot {
+  width: 10px;
+  height: 10px;
+  background: white;   /* changed from cyan to white */
+  border-radius: 50%;
+  animation: bounce 0.4s infinite alternate;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+.pdf-loader .dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.pdf-loader .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+
+
+/* 
+
+.pdf-loading {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 255, 200, 0.1) 25%, rgba(0, 255, 200, 0.3) 50%, rgba(0, 255, 200, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    filter: blur(8px) brightness(1.5);
+    border-radius: 12px;
+}
+
+.pdf-background {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,255,200,0.15), transparent 70%),
+              repeating-linear-gradient(45deg, rgba(0,255,200,0.05) 0, rgba(0,255,200,0.05) 2px, transparent 2px, transparent 40px);
+  animation: glowPulse 6s infinite alternate;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+  40% { transform: scale(1.3); opacity: 1; }
+}
+
+
+@keyframes shimmer {
+    from {
+        background-position: -200% 0;
+    }
+
+    to {
+        background-position: 200% 0;
+    }
+} */
+
+
+/* Futuristic Fade (with blur + glow) */
+.transition-fade {
+    opacity: 0;
+    filter: blur(10px) brightness(1.5);
+    animation: fadeInFuturistic 0.8s forwards;
+}
+
+@keyframes fadeInFuturistic {
+    0% {
+        opacity: 0;
+        filter: blur(20px) brightness(2);
+        transform: scale(0.95);
+    }
+
+    60% {
+        opacity: 0.8;
+        filter: blur(5px) brightness(1.2);
+        transform: scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0) brightness(1);
+        transform: scale(1);
+    }
+}
+
+/* Futuristic Slide Left (with 3D tilt + glow) */
+.transition-slide-left {
+    animation: slideLeftFuturistic 0.9s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes slideLeftFuturistic {
+    from {
+        transform: translateX(100%) rotateY(-45deg) scale(0.9);
+        opacity: 0;
+        filter: blur(8px);
+    }
+
+    to {
+        transform: translateX(0) rotateY(0deg) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Futuristic Slide Up (with depth + zoom) */
+.transition-slide-up {
+    animation: slideUpFuturistic 0.9s ease-out forwards;
+}
+
+@keyframes slideUpFuturistic {
+    from {
+        transform: translateY(100%) scale(0.8) perspective(800px) rotateX(25deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    to {
+        transform: translateY(0) scale(1) perspective(800px) rotateX(0deg);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Disable animation if needed */
+.transition-none {
+    animation: none !important;
+}
+
+
+
+
+/* 
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0a192f, #112d4e, #1b3a5d);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 40px;
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    font-weight: 600;
+    color: #00c8ff;
+    text-shadow: 0 0 8px rgba(0,200,255,0.6);
+}
+
+h2 {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #00c8ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0,200,255,0.6);
+}
+
+.qr-container {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 18px rgba(0, 200, 255, 0.4);
+    border: 1px solid rgba(0,200,255,0.4);
+}
+
+.qr-code {
+    width: 100%;
+    max-width: 240px;
+}
+
+.form-group {
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 550;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #bdeaff;
+}
+
+.form-group input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 2px solid rgba(0,200,255,0.5);
+    background-color: rgba(10, 25, 47, 0.8);
+    color: #fff;
+    font-size: 15px;
+    width: 220px;
+    transition: all 0.3s ease;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.form-group input:focus {
+    border-color: #00c8ff;
+    outline: none;
+    box-shadow: 0 0 12px rgba(0,200,255,0.6);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #00c8ff, #007bff);
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(0,200,255,0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #0099cc, #0066cc);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0,200,255,0.8);
+}
+
+.version-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.version {
+    font-size: 12px;
+    opacity: 0.7;
+    line-height: 1.5;
+    color: #bdeaff;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0px); }
+} */
