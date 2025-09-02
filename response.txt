@@ -675,3 +675,341 @@ for windows path reco:
     "mediafile_count": 8,
     "isfreeze": false
 }
+
+
+
+
+
+{
+    "start_time": "null",
+    "updated_time": "2025-09-01T11:24:41",
+    "layout_list": [
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1292398.jpg",
+                            "Duration": "10",
+                            "Mediafile_id": 1292,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1292398.jpg"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 0,
+                    "id": 654,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1293663.mp4",
+                            "Duration": "7",
+                            "Mediafile_id": 1293,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1293663.mp4"
+                        }
+                    ],
+                    "ismute": false,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "7",
+                    "y": 1,
+                    "id": 655,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": 10,
+            "layoutid": 174,
+            "zonecount": 2
+        },
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1366456.png",
+                            "Duration": "10",
+                            "Mediafile_id": 1369,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1366456.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 0,
+                    "id": 682,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1370639.png",
+                            "Duration": "10",
+                            "Mediafile_id": 1370,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1370639.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 2,
+                    "id": 683,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1371504.mp4",
+                            "Duration": "187",
+                            "Mediafile_id": 1371,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1371504.mp4"
+                        }
+                    ],
+                    "ismute": false,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "187",
+                    "y": 1,
+                    "id": 684,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": 187,
+            "layoutid": 186,
+            "zonecount": 3
+        },
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1375670.png",
+                            "Duration": "10",
+                            "Mediafile_id": 1375,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1375670.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 1,
+                    "id": 685,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1376542.mp4",
+                            "Duration": "187",
+                            "Mediafile_id": 1376,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1376542.mp4"
+                        }
+                    ],
+                    "ismute": false,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "187",
+                    "y": 0,
+                    "id": 686,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": 187,
+            "layoutid": 187,
+            "zonecount": 2
+        },
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_2930645.png",
+                            "Duration": "10",
+                            "Mediafile_id": 2930,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_2930645.png"
+                        }
+                    ],
+                    "ismute": true,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "10",
+                    "y": 1,
+                    "id": 1088,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                },
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_2931795.mp4",
+                            "Duration": "284",
+                            "Mediafile_id": 2931,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_2931795.mp4"
+                        }
+                    ],
+                    "ismute": false,
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "284",
+                    "y": 0,
+                    "id": 1089,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": 284,
+            "layoutid": 313,
+            "zonecount": 2
+        },
+        {
+            "zonelist": [
+                {
+                    "media_list": [
+                        {
+                            "Order_id": 0,
+                            "Isactive": true,
+                            "Filename": "IQ_WORLD_1294529.mp4",
+                            "Duration": "32",
+                            "Mediafile_id": 1294,
+                            "Page_count": 1,
+                            "Url": "http://192.168.0.43/iqsignage/2/26/IQ_WORLD_1294529.mp4"
+                        }
+                    ],
+                    "ismute": "true",
+                    "x": 0,
+                    "width": 0,
+                    "zone_duration": "32",
+                    "y": 0,
+                    "id": 0,
+                    "rows": 1,
+                    "cols": 1,
+                    "height": 0
+                }
+            ],
+            "isvertical": true,
+            "layout_duration": "32",
+            "layoutid": 0,
+            "zonecount": 1
+        }
+    ],
+    "playlist_name": "mall playlist",
+    "content_type": "STATE",
+    "size": 135796394,
+    "media_type": "defaultMedia",
+    "End_time": "null",
+    "playlist_id": 26,
+    "scrollerList": [
+        {
+            "id": 1,
+            "name": "test",
+            "clientname": "rajbabu",
+            "message": "Be silent when you are angry",
+            "logo": null,
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-03-04T19:46:38",
+            "updateddate": "2024-03-13T13:03:26",
+            "fncolor": "#f4f0f0",
+            "bgcolor": "#062def",
+            "fnsize": "35",
+            "fontname": "http://192.168.0.43/iqsignage/fonts/LeagueSpartan-Bold/LeagueSpartan-Bold.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "LeagueSpartan-Bold",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-09-01T11:24:41",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        },
+        {
+            "id": 3,
+            "name": "testingdata",
+            "clientname": "rajbabu",
+            "message": "சந்தோஷ் சுப்ரமணியம் (திரையில் சந்தோஷ் சுப்ரமணியம் என்று உச்சரிக்கப்படுகிறது) [2] என்பது 2008 ஆம் ஆண்டு வெளிவந்த இந்திய தமிழ் மொழி காதல் நகைச்சுவைத் தி",
+            "logo": null,
+            "isactive": true,
+            "isdelete": false,
+            "creationdate": "2024-03-06T11:57:16",
+            "updateddate": "2024-03-06T11:57:40",
+            "fncolor": "#000000",
+            "bgcolor": "#d71919",
+            "fnsize": "35",
+            "fontname": "http://192.168.0.43/iqsignage/fonts/Poppins-Regular/Poppins-Regular.otf",
+            "width": "auto",
+            "height": "auto",
+            "behavior": "scroll",
+            "scrlspeed": "10",
+            "direction": "left",
+            "x": "0",
+            "y": "0",
+            "font_folder": "Poppins-Regular",
+            "scroller_type": null,
+            "playlistid": null,
+            "type": "TOP",
+            "isfreeze": false,
+            "playlist_updatedtime": "2025-09-01T11:24:41",
+            "scrollTypeMaster": {
+                "id": 2,
+                "type": "BOTTOM",
+                "isactive": true
+            }
+        }
+    ],
+    "mediafile_count": 10,
+    "isfreeze": false
+}
